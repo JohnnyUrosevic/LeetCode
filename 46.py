@@ -12,7 +12,7 @@ class Solution:
 
         result = []
         for i in range(len(nums)):
-            permutation = nums.copy()
+            permutation = nums
             permutation[0], permutation[i] = permutation[i], permutation[0]
             result += [permutation[:1] + x for x in self.permute(permutation[1:])]
             
