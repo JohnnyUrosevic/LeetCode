@@ -20,6 +20,9 @@ class Solution:
                 
                 return self.isMatch(s, p[2:])
             
+            if not s:
+                return False
+            
             if not self.matchChars(s[0], p[0]):
                 return False
             
