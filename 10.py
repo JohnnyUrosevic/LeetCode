@@ -8,17 +8,8 @@ class Solution:
         
         while p:
             if len(p) > 1 and p[1] == '*':
-                l = 0
-                while l < len(s) and self.isMatch(s[l], p[0]):
-                    l+=1
-                
-                for i in range(l, 0, -1):
-                    result = self.isMatch(s[i:], p[2:])
-                    
-                    if result:
-                        return True
-                
-                return self.isMatch(s, p[2:])
+                return self.isMatch(s, p[2:]) or s and \
+                    self.matchChars(s[0], p[0]) and self.isMatch(s[1:], p)
             
             if not s:
                 return False
